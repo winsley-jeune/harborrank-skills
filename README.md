@@ -2,7 +2,20 @@
 
 SEO workflows for Claude Code, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, and Google Search Console.
 
-## Install
+## Install as a Claude Code plugin (recommended)
+
+One install adds the HarborRank MCP server and all seven skills. Inside Claude Code:
+
+```
+/plugin marketplace add winsley-jeune/harborrank-skills
+/plugin install harborrank@harborrank
+```
+
+Then run `/mcp`, pick `harborrank`, and sign in. The first MCP call opens the HarborRank login in your browser.
+
+## Install the skill files only
+
+For Codex or any agent that reads `SKILL.md` files, or if you already added the MCP server by hand:
 
 ```bash
 npx skills add winsley-jeune/harborrank-skills
@@ -14,9 +27,9 @@ Install everything for Claude Code only:
 npx skills add winsley-jeune/harborrank-skills --skill '*' --agent claude-code
 ```
 
-Or copy the folders into `~/.claude/skills/` (Claude Code) or `~/.codex/skills/` (Codex).
+Or copy the folders under `skills/` into `~/.claude/skills/` (Claude Code) or `~/.codex/skills/` (Codex).
 
-Connect HarborRank MCP first. The skill files are instructions, not data: without the MCP connection your agent only has what it can see on its own.
+If you install the files only, connect [HarborRank MCP](https://harborrank.com/docs/mcp) first. The skill files are instructions, not data: without the MCP connection your agent only has what it can see on its own.
 
 ## Skills
 

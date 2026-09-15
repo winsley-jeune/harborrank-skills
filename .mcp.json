@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "harborrank": {
+      "type": "http",
+      "url": "https://app.harborrank.com/mcp"
+    }
+  }
+}
