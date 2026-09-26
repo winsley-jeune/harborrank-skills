@@ -11,7 +11,26 @@ One install adds the HarborRank MCP server and all seven skills. Inside Claude C
 /plugin install harborrank@harborrank
 ```
 
-Then run `/mcp`, pick `harborrank`, and sign in. The first MCP call opens the HarborRank login in your browser.
+Then run `/mcp`, pick `harborrank`, and sign in. The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
+
+## Requirements
+
+- A HarborRank account. Paid plans start at $29/month; there is no free plan. The card is charged on signup and you can email support@harborrank.com within 7 days of the first charge for a full refund.
+- Claude Code (or another agent that reads `SKILL.md` files and can connect to a remote HTTP MCP server).
+
+## Example prompts
+
+- "Research keywords for a Plymouth, MA marine electrician: shortlist ten with volume, difficulty and intent, and save the good ones to my project."
+- "Who ranks for my saved keywords, and where are the openings a small site could take?"
+- "Is `/pricing` indexed? If not, why not, and which of my pages are sitting at positions 8 to 20?"
+
+## What the plugin runs, sends and fetches
+
+- The skills are plain-text instructions. They run nothing on your machine and install no code.
+- `.mcp.json` points Claude Code at one remote MCP server, `https://app.harborrank.com/mcp`, over HTTPS with OAuth 2.0. No credentials are stored in this repository.
+- Tool calls send the arguments you or the agent supply (keywords, domains, URLs, a project id) to HarborRank, which fetches SEO data from DataForSEO and, when you connect a property, read-only data from your Google Search Console. Nothing is sent anywhere else.
+- Research tools use plan credits; Search Console and saved-keyword reads use none. The tool descriptions state the cost before a call runs.
+- Privacy policy: https://harborrank.com/privacy. Terms: https://harborrank.com/terms-and-conditions. Support: support@harborrank.com.
 
 ## Install the skill files only
 
