@@ -1,11 +1,24 @@
 {
   "name": "harborrank",
   "displayName": "HarborRank SEO",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SEO research for Claude Code on live search data: keyword research, clustering, competitor analysis, and link prospecting skills, plus the HarborRank MCP server for keyword metrics, SERPs, backlinks, rank tracking, site audits, and Google Search Console.",
-  "author": { "name": "HarborRank", "url": "https://harborrank.com" },
+  "author": {
+    "name": "HarborRank",
+    "url": "https://harborrank.com"
+  },
   "homepage": "https://harborrank.com/claude-seo-skills",
   "repository": "https://github.com/winsley-jeune/harborrank-skills",
   "license": "MIT",
-  "keywords": ["seo", "keyword-research", "serp", "backlinks", "search-console", "mcp", "rank-tracking"]
+  "keywords": [
+    "seo",
+    "keyword-research",
+    "serp",
+    "backlinks",
+    "search-console",
+    "mcp",
+    "rank-tracking"
+  ],
+  "icon": "icon.png",
+  "privacyPolicyUrl": "https://harborrank.com/privacy"
 }

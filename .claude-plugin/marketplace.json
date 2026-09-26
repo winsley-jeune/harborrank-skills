@@ -10,7 +10,7 @@
       "name": "harborrank",
       "source": "./",
       "description": "SEO skills and the HarborRank MCP server: keyword metrics, live SERPs, backlinks, rank tracking, site audits, and Search Console inside Claude Code.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "productivity",
       "keywords": [
         "seo",
