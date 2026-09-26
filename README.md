@@ -1,5 +1,7 @@
 # HarborRank Agent Skills
 
+[![smithery badge](https://smithery.ai/badge/jeunewinsley9/harborrank)](https://smithery.ai/servers/jeunewinsley9/harborrank)
+
 SEO workflows for Claude Code, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, and Google Search Console.
 
 ## Install as a Claude Code plugin (recommended)
