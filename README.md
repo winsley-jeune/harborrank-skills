@@ -6,7 +6,7 @@ SEO workflows for Claude Code, Codex, and other agents that support `SKILL.md` f
 
 ## Install as a Claude Code plugin (recommended)
 
-One install adds the HarborRank MCP server and all seven skills. Inside Claude Code:
+One install adds the HarborRank MCP server and all eight skills. Inside Claude Code:
 
 ```
 /plugin marketplace add winsley-jeune/harborrank-skills
@@ -63,6 +63,7 @@ If you install the files only, connect [HarborRank MCP](https://harborrank.com/d
 | `/competitive-landscape` | Map who wins a market, why, and where the openings are. |
 | `/competitor-analysis` | Study one competitor's keywords, pages, and backlinks and turn it into takeaways. |
 | `/link-prospecting` | Find qualified link prospects and the angle that makes each one relevant. |
+| `/lead-teardown` | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
 
 Docs for every skill: https://harborrank.com/docs/skills
 

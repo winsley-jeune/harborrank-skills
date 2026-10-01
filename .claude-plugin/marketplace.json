@@ -1,6 +1,6 @@
 {
   "name": "harborrank",
-  "description": "HarborRank SEO tools for Claude Code: seven research skills and the HarborRank MCP server.",
+  "description": "HarborRank SEO tools for Claude Code: eight research skills and the HarborRank MCP server.",
   "owner": {
     "name": "HarborRank",
     "url": "https://harborrank.com"
@@ -10,7 +10,7 @@
       "name": "harborrank",
       "source": "./",
       "description": "SEO skills and the HarborRank MCP server: keyword metrics, live SERPs, backlinks, rank tracking, site audits, and Search Console inside Claude Code.",
-      "version": "1.0.1",
+      "version": "1.1.0",
       "category": "productivity",
       "keywords": [
         "seo",
