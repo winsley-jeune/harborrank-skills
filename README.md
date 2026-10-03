@@ -2,6 +2,7 @@
 
 [![smithery badge](https://smithery.ai/badge/jeunewinsley9/harborrank)](https://smithery.ai/servers/jeunewinsley9/harborrank)
 [![Indexed on TensorBlock MCP Index](https://mcp-index.tensorblock.co/v1/servers/harborrank-com-features-mcp-8cd89348/badge.svg)](https://tensorblock.co/mcp/servers/harborrank-com-features-mcp-8cd89348)
+[![HarborRank MCP server on Glama](https://glama.ai/mcp/connectors/com.harborrank/harborrank/badges/score.svg)](https://glama.ai/mcp/connectors/com.harborrank/harborrank)
 
 SEO workflows for Claude Code, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, and Google Search Console.
 
