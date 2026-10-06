@@ -9,12 +9,25 @@
     {
       "name": "harborrank",
       "source": "./",
-      "description": "SEO skills and the HarborRank MCP server: keyword metrics, live SERPs, backlinks, rank tracking, site audits, and Search Console inside Claude Code.",
+      "description": "SEO workflows for Claude Code on live search data. Eight skills: seo-coach, seo-project-setup, keyword-research, keyword-clustering, competitive-landscape, competitor-analysis, link-prospecting, and lead-teardown for agencies selling local SEO. Includes the HarborRank MCP server for keyword metrics, SERPs, Google Maps rankings, backlinks, rank tracking, site audits, and Google Search Console. Free plan available.",
       "version": "1.2.0",
       "category": "productivity",
       "keywords": [
         "seo",
         "keyword-research",
+        "keyword-clustering",
+        "competitor-analysis",
+        "serp",
+        "backlinks",
+        "link-building",
+        "local-seo",
+        "google-maps",
+        "search-console",
+        "rank-tracking",
+        "site-audit",
+        "content-strategy",
+        "lead-generation",
+        "seo-agency",
         "mcp"
       ]
     }

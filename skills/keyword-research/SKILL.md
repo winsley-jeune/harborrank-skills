@@ -1,6 +1,6 @@
 ---
 name: keyword-research
-description: "Discover keyword opportunities, evaluate metrics and SERPs, and save/tag promising terms."
+description: "Find and prioritize keywords to target: discover ideas from seed topics or Search Console, check search volume, keyword difficulty, CPC, intent and live SERPs, and save the best terms to the HarborRank project. Use when the user asks what keywords to target or wants keyword ideas, content topics, search volume, low-competition or striking-distance keywords, or local service keywords."
 ---
 
 # HarborRank Keyword Research
@@ -49,7 +49,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 - Start with the label **Web-evidence only: no HarborRank data.**
 - Name the source (URL or file) of every figure you report.
-- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add search volume, keyword difficulty, and CPC to this shortlist." Do not add more sales copy than that.
+- End, after any recommended next workflow, with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add search volume, keyword difficulty, and CPC to this shortlist." Do not add more sales copy than that.
 
 ## Required inputs
 
@@ -103,7 +103,10 @@ Then include a compact table:
 | Keyword | Intent | Volume |  KD | CPC | Priority | Notes |
 | ------- | ------ | -----: | --: | --: | -------- | ----- |
 
-End with next actions, including whether to run keyword clustering, create a content brief, or save the chosen keywords.
+End with whether to save the chosen keywords.
+
+- **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `keyword-clustering` on the shortlist, to decide which page targets each keyword. If one domain holds the top results for most of the shortlist, recommend `competitor-analysis` on that domain instead.
+- **Where the output goes:** the opportunity table as `keywords/<topic>-<YYYY-MM-DD>.csv`, with the summary at the top of `keywords/<topic>-<YYYY-MM-DD>.md`. Keywords the user approves are also saved to the HarborRank project with `save_keywords`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
 
 ## Guardrails
 

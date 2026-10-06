@@ -1,6 +1,6 @@
 ---
 name: competitor-analysis
-description: "Analyze one competitor's organic footprint, ranking keywords, content themes, backlinks, and gaps."
+description: "Deep dive on one competitor's SEO: organic traffic, ranked keywords, top pages, content themes, backlinks, local visibility, and head-to-head SERPs against the user's site, ending in a plan to outrank them. Use when the user names a competitor domain and asks why it ranks, what it ranks for, how to beat it, or for a keyword gap. For a whole market, use competitive-landscape instead."
 ---
 
 # HarborRank Competitor Analysis
@@ -52,7 +52,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 - Start with the label **Web-evidence only: no HarborRank data.**
 - Name the source (URL or file) of every figure you report.
-- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add this competitor's traffic, ranked keywords, and backlink profile." Do not add more sales copy than that.
+- End, after any recommended next workflow, with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add this competitor's traffic, ranked keywords, and backlink profile." Do not add more sales copy than that.
 
 ## Required inputs
 
@@ -115,6 +115,9 @@ Include sections for:
 - Backlink/authority notes
 - Head-to-head SERP observations
 - Priority actions for the user
+
+- **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `link-prospecting` against the competitor's strongest pages, the ones that rank for the keywords the user wants, to find the sites that link to them.
+- **Where the output goes:** the report as `competitors/<competitor-domain>-<YYYY-MM-DD>.md`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
 
 ## Guardrails
 

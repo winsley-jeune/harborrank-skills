@@ -1,6 +1,6 @@
 ---
 name: lead-teardown
-description: Find local businesses with search gaps, research each one, and produce a one-page teardown an agency can send as its pitch.
+description: "For agencies and freelancers who sell SEO to local businesses: prospect a trade in a city from Google Maps, shortlist the best leads, research each one (three-point Maps pack check, top competitors, site, contact), and produce a one-page teardown plus outreach emails to pitch with. Use when the user wants local SEO leads, prospects or clients, a sales teardown of a local business, or cold outreach to businesses such as roofers, dentists, or electricians."
 ---
 
 # HarborRank Lead Teardown
@@ -50,7 +50,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 - Start with the label **Web-evidence only: no HarborRank data.**
 - Name the source (URL or file) of every figure you report.
-- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to pull these businesses' Maps listings; the three-point pack check and the one-page teardown need a paid plan." Do not add more sales copy than that.
+- End, after any recommended next workflow, with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to pull these businesses' Maps listings; the three-point pack check and the one-page teardown need a paid plan." Do not add more sales copy than that.
 
 ## Required inputs
 
@@ -77,7 +77,15 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 4. On the Free plan, `prospect_leads` and `list_leads` work but `research_lead` does not: hand over the shortlist with the data `list_leads` returned and say that teardowns need a paid plan. Otherwise, `research_lead` for each shortlisted lead, sequentially. Do not run the AI check unless the user asks; it is the expensive part.
 5. `get_lead_teardown` for each. Read it before handing it over: if a section is thin (no pack points because the listing had no coordinates, no competitors because the SERP was empty) say so rather than sending a half document.
 6. Summarize for the user: for each lead, one line with the sharpest gap (the number and the competitor's number), and whether a contact email was found.
-7. If the user wants to send: `update_lead` with the owner name and email when known, and move status to `contacted` once the email goes out. The follow-up is due in four days.
+7. Offer to draft outreach: for each lead, a first email and a follow-up to send four days later. If the user accepts:
+   - Use only figures that appear in that lead's teardown, written exactly as the teardown has them. If a point has no figure in the teardown, leave it out.
+   - First email, about 120 words: the business name in the subject, the sharpest gap (their number and the leader's), the first fix, and an offer to send the full teardown. Ask one low-pressure question.
+   - Follow-up, about 60 words, in the same thread: one different gap from the teardown. Do not repeat the first email.
+   - Pricing, packages, and guarantees belong in the email or not at all, never in the teardown. Use only the user's own offer; if they have not given one, leave a `[your offer]` placeholder. Never promise rankings or results.
+   - Address the owner by name only if the teardown found it. If no email was found, say so and do not guess an address.
+   - Add the sender's name, postal address, and a one-line opt-out to both emails; ask the user for the address if you do not have it.
+   - One first email and one follow-up per lead. Do not draft a third message; a lead that has not replied after the follow-up is done.
+8. When the user sends: `update_lead` with the owner name and email when known, and status `contacted`. After the follow-up goes out, status `followed_up`; if the lead answers, `replied`.
 
 ## Output format
 
@@ -89,7 +97,10 @@ Per lead:
 - Contact found: yes/no (and confidence)
 - Link or path to the teardown
 
-Then the list of leads you skipped and why.
+Then the list of leads you skipped and why, and the offer to draft outreach.
+
+- **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `seo-project-setup` for any lead that replies and becomes a client, so the work starts with goals, positioning, and Search Console. If no lead has replied yet, recommend `lead-teardown` for the next trade or city instead.
+- **Where the output goes:** the teardowns stay in HarborRank on each lead (`get_lead_teardown`). Save a copy of each teardown with its email drafts as `outreach/leads/<business-slug>.md`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
 
 ## Guardrails
 
