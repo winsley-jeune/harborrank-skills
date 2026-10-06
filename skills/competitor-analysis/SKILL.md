@@ -11,6 +11,49 @@ Analyze one competitor deeply enough to decide what to learn from, avoid, counte
 
 Use this for a named competitor. For identifying the market leaders first, use `competitive-landscape`.
 
+## Step 0: Check connection
+
+Before any other step, confirm the HarborRank MCP tools are loaded. Look for `get_domain_overview` or `list_leads` among your tools, including deferred tools you can load (the name may carry a prefix such as `mcp__harborrank__`). If they are there, call `whoami`: it uses no credits, confirms the user is signed in, and returns `creditsRemaining` for budgeting the run. Do not call a research tool to test the connection.
+
+If neither tool is available, or `whoami` fails because the user is not signed in, tell the user plainly: "HarborRank isn't connected, so I can't pull live HarborRank data yet." Then tell them how to connect it:
+
+- Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
+- Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
+- Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
+
+Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
+
+### Plan limits
+
+On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
+
+- If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
+- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
+- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have.
+- When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
+
+### Fallback mode (no HarborRank connection)
+
+Use this mode only when Step 0 finds no connection. It works from web search, page reading, and files the user provides.
+
+**Can still do**
+
+- Read the competitor's site: navigation, sitemap, blog, product, and comparison pages.
+- Map their page types, content themes, and positioning.
+- Check live search results for target terms to compare the two sites head to head.
+- Use the user's Search Console CSV exports, if any, as their own baseline.
+- Frame the analysis as qualitative.
+
+**Must not estimate**
+
+Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backlink counts, Maps pack positions, and Q&A counts. Write `unknown` for each. A web search shows which pages appeared for a query when you searched, not their Google ranking: report it as "appeared in web search", never as a position.
+
+**Output**
+
+- Start with the label **Web-evidence only: no HarborRank data.**
+- Name the source (URL or file) of every figure you report.
+- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add this competitor's traffic, ranked keywords, and backlink profile." Do not add more sales copy than that.
+
 ## Required inputs
 
 - `projectId`
@@ -44,7 +87,7 @@ Use this for a named competitor. For identifying the market leaders first, use `
    - Educational guides
    - Branded demand
    - Local/neighborhood terms when relevant
-8. Call `get_backlinks_overview` for the competitor, especially if authority appears to explain rankings. Continue without backlink evidence if it is unavailable.
+8. Call `get_backlinks_overview` for the competitor, especially if authority appears to explain rankings. Backlinks need a paid plan; on Free, continue without backlink evidence.
 9. Use `get_serp_results` for important shared or target keywords to compare positioning, passing provided location/language when supported.
 10. Produce an actionable plan:
     - What they are doing well
@@ -63,7 +106,7 @@ Start with:
 Then include:
 
 | Area | Competitor pattern | Evidence | HarborRank opportunity |
-| ---- | ------------------ | -------- | ------------------- |
+| ---- | ------------------ | -------- | ---------------------- |
 
 Include sections for:
 

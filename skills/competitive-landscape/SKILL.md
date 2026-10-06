@@ -11,6 +11,48 @@ Answer: "Who is winning this SEO market, what content is working for them, and w
 
 Use this when the user wants a market-level view across several competitors. For a deep dive on one domain, use `competitor-analysis`.
 
+## Step 0: Check connection
+
+Before any other step, confirm the HarborRank MCP tools are loaded. Look for `get_domain_overview` or `list_leads` among your tools, including deferred tools you can load (the name may carry a prefix such as `mcp__harborrank__`). If they are there, call `whoami`: it uses no credits, confirms the user is signed in, and returns `creditsRemaining` for budgeting the run. Do not call a research tool to test the connection.
+
+If neither tool is available, or `whoami` fails because the user is not signed in, tell the user plainly: "HarborRank isn't connected, so I can't pull live HarborRank data yet." Then tell them how to connect it:
+
+- Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
+- Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
+- Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
+
+Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
+
+### Plan limits
+
+On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
+
+- If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
+- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
+- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have.
+- When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
+
+### Fallback mode (no HarborRank connection)
+
+Use this mode only when Step 0 finds no connection. It works from web search, page reading, and files the user provides.
+
+**Can still do**
+
+- Run the market query set through web search and note which domains keep appearing.
+- Group those domains by type: direct competitors, publishers, directories, communities, resources.
+- Read the leaders' sites to identify the content formats, themes, and positioning that are working.
+- Call the result directional.
+
+**Must not estimate**
+
+Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backlink counts, Maps pack positions, and Q&A counts. Write `unknown` for each. A web search shows which pages appeared for a query when you searched, not their Google ranking: report it as "appeared in web search", never as a position.
+
+**Output**
+
+- Start with the label **Web-evidence only: no HarborRank data.**
+- Name the source (URL or file) of every figure you report.
+- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add each leader's organic footprint, traffic, and backlink strength." Do not add more sales copy than that.
+
 ## Required inputs
 
 - `projectId`
@@ -47,7 +89,7 @@ Use this when the user wants a market-level view across several competitors. For
    - Documentation/resources
 6. For the strongest recurring domains, call `get_domain_overview`; default to the top 3-5 domains before expanding.
 7. For direct competitors and relevant publishers, call `get_ranked_keywords`.
-8. Use `get_backlinks_overview` when backlink authority appears important or the user asks why a domain is winning. Backlinks may be unavailable if the account has not enabled that data; continue with SERP/domain evidence if it fails.
+8. Use `get_backlinks_overview` when backlink authority appears important or the user asks why a domain is winning. Backlinks need a paid plan; on Free, skip this and continue with SERP and domain evidence.
 9. Synthesize patterns: content types, themes, SERP formats, local-pack signals, authority advantages, and underserved angles.
 
 ## Output format

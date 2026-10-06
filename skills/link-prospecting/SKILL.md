@@ -9,6 +9,48 @@ description: Find link prospects, discover contact paths, and draft outreach fro
 
 Find realistic pages, sites, and authors that might reference the user's page, product, study, guide, or tool. Use HarborRank for prospect discovery, then use available web/search/browser tools for contact discovery.
 
+## Step 0: Check connection
+
+Before any other step, confirm the HarborRank MCP tools are loaded. Look for `get_domain_overview` or `list_leads` among your tools, including deferred tools you can load (the name may carry a prefix such as `mcp__harborrank__`). If they are there, call `whoami`: it uses no credits, confirms the user is signed in, and returns `creditsRemaining` for budgeting the run. Do not call a research tool to test the connection.
+
+If neither tool is available, or `whoami` fails because the user is not signed in, tell the user plainly: "HarborRank isn't connected, so I can't pull live HarborRank data yet." Then tell them how to connect it:
+
+- Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
+- Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
+- Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
+
+Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
+
+### Plan limits
+
+On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
+
+- If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
+- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
+- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have.
+- When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
+
+### Fallback mode (no HarborRank connection)
+
+Use this mode only when Step 0 finds no connection. It works from web search, page reading, and files the user provides.
+
+**Can still do**
+
+- Run the prospecting query patterns through web search instead of `get_serp_results`, then filter prospects as usual.
+- Read prospect pages to qualify relevance and choose the outreach angle.
+- Discover contact paths and draft outreach as usual; those steps already use web and browser tools.
+- Skip competitor backlink analysis.
+
+**Must not estimate**
+
+Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backlink counts, Maps pack positions, and Q&A counts. Write `unknown` for each. A web search shows which pages appeared for a query when you searched, not their Google ranking: report it as "appeared in web search", never as a position.
+
+**Output**
+
+- Start with the label **Web-evidence only: no HarborRank data.**
+- Name the source (URL or file) of every figure you report.
+- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add competitor backlink patterns and the strength of each prospect's domain." Do not add more sales copy than that.
+
 ## Required inputs
 
 - `projectId`
@@ -64,7 +106,7 @@ Use `get_serp_results` in batches for the most relevant patterns. Send at most 1
 1. Clarify the linkable asset and the reason someone would reference it.
 2. Build 5-10 prospecting queries by default.
 3. Call `get_serp_results` for those queries.
-4. If competitors are provided, call `get_backlinks_overview` for the strongest competitor domains or pages first. Continue without backlink evidence if it is unavailable.
+4. If competitors are provided, call `get_backlinks_overview` for the strongest competitor domains or pages first. Backlinks need a paid plan; on Free, continue without backlink evidence.
 5. For local SEO, use `search_local_businesses` and `get_local_serp_results` around priority locations to identify nearby competitors, categories, and local SERP evidence before searching for local chambers, associations, campus resources, community pages, and directories.
 6. Filter prospects:
    - Keep topical relevance and editorial pages.

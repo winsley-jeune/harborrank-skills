@@ -1,7 +1,7 @@
 {
   "name": "harborrank",
   "displayName": "HarborRank SEO",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "SEO research for Claude Code on live search data: keyword research, clustering, competitor analysis, link prospecting, and local lead teardown skills, plus the HarborRank MCP server for keyword metrics, SERPs, backlinks, rank tracking, site audits, and Google Search Console.",
   "author": {
     "name": "HarborRank",

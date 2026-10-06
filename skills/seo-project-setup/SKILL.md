@@ -9,6 +9,48 @@ description: Set up a durable local SEO workspace with project context, notes, g
 
 Help the user set up a local SEO workspace for one website or SEO project. The folder is where the agent saves notes, goals, exports, briefs, reports, preferences, and project context over time. This is a workspace and context setup workflow, not a full audit.
 
+## Step 0: Check connection
+
+Before any other step, confirm the HarborRank MCP tools are loaded. Look for `get_domain_overview` or `list_leads` among your tools, including deferred tools you can load (the name may carry a prefix such as `mcp__harborrank__`). If they are there, call `whoami`: it uses no credits, confirms the user is signed in, and returns `creditsRemaining` for budgeting the run. Do not call a research tool to test the connection.
+
+If neither tool is available, or `whoami` fails because the user is not signed in, tell the user plainly: "HarborRank isn't connected, so I can't pull live HarborRank data yet." Then tell them how to connect it:
+
+- Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
+- Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
+- Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
+
+Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
+
+### Plan limits
+
+On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
+
+- If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
+- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
+- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have.
+- When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
+
+### Fallback mode (no HarborRank connection)
+
+Use this mode only when Step 0 finds no connection. It works from web search, page reading, and files the user provides.
+
+**Can still do**
+
+- Run every setup step except the HarborRank check: working folder, website scope, goals, positioning, asset inventory, and the first workflow.
+- Research positioning by reading the user's site, competitor pages, and public reviews.
+- Take Search Console data through CSV exports (the step 6 fallback path).
+- In step 5, mark HarborRank "Not connected" in the checklist, with the connection steps as the next action.
+
+**Must not estimate**
+
+Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backlink counts, Maps pack positions, and Q&A counts. Write `unknown` for each. A web search shows which pages appeared for a query when you searched, not their Google ranking: report it as "appeared in web search", never as a position.
+
+**Output**
+
+- Start with the label **Web-evidence only: no HarborRank data.**
+- Name the source (URL or file) of every figure you report.
+- End with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to read Search Console directly and save this setup to a project." Do not add more sales copy than that.
+
 ## Tone
 
 Be friendly, practical, and structured. Ask questions in small batches. Explain why each item matters only when useful. Do not overwhelm a beginner with jargon.
@@ -89,8 +131,8 @@ After the user has described the company, website, goals, and positioning, check
 1. Use `whoami` if available.
 2. Use `list_projects` to confirm the user can access projects.
 3. Match the project to the website/domain they want to rank for.
-4. If the project list is ambiguous, ask the user which project should be used.
-5. If the MCP is unavailable, tell the user to connect HarborRank MCP before continuing with live HarborRank data.
+4. If the project list is ambiguous, ask the user which project should be used. If no project matches the site, offer `create_project`. Free and Basic plans include one project, so if the only project belongs to a different site, ask the user before replacing or reusing it.
+5. If the MCP is unavailable, follow Step 0: give the user the connection steps and continue setup in fallback mode.
 
 Do not run research tools just to test connectivity; `whoami` and `list_projects` are enough.
 

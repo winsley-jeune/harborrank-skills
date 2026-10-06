@@ -19,7 +19,7 @@ Then run `/mcp`, pick `harborrank`, and sign in. The first MCP call opens the Ha
 
 ## Requirements
 
-- A HarborRank account. Paid plans start at $29/month; there is no free plan. The card is charged on signup and you can email support@harborrank.com within 7 days of the first charge for a full refund.
+- A HarborRank account. The Free plan needs no card and includes 1,000 research credits a month, one project, and Search Console. Backlinks, lead research, and Lighthouse checks need a paid plan, from $29/month; the card is charged when you choose one, and you can email support@harborrank.com within 7 days of the first charge for a full refund.
 - Claude Code (or another agent that reads `SKILL.md` files and can connect to a remote HTTP MCP server).
 
 ## Example prompts
