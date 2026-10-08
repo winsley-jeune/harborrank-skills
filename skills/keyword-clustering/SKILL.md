@@ -23,7 +23,7 @@ Do not stop there. Continue in fallback mode (below). If the user connects Harbo
 
 ### Plan limits
 
-On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
+On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Full backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan; on Free, the backlinks tools return a preview (totals and the top 3 referring domains, about 50 credits) with an upgrade link.
 
 - If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
 - If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan and pass on the upgrade link from the reply, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
