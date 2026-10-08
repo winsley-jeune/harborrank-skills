@@ -26,8 +26,9 @@ Do not stop there. Continue in fallback mode (below). If the user connects Harbo
 On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan.
 
 - If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
-- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
-- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have.
+- If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan and pass on the upgrade link from the reply, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
+- If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have. If `whoami` warns that credits are low, say so before a large run.
+- If the user asks to upgrade, change plan or buy credits, call `get_upgrade_link` (no credits) and give them the link. They pay on HarborRank with PayPal; never say the upgrade is done until `whoami` shows the new plan.
 - When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
 
 ### Fallback mode (no HarborRank connection)
