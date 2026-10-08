@@ -79,9 +79,9 @@ Offer 2-4 next steps, chosen only from the row that matches their setup, with th
 | ----------- | ------------ | ------------- |
 | HarborRank not connected | Connect HarborRank (give the steps from Step 0) | `seo-project-setup` to capture goals and positioning while they connect; an explanation of how the workflows work |
 | Connected, no project | `seo-project-setup`, which creates the project and captures goals | An explanation of the workflows |
-| Project, Search Console not connected or expired | Connect or reconnect Search Console on the project's Integrations page in the app; it is free and their real data | `keyword-research` from seed topics; `competitive-landscape`; `competitor-analysis` if they name a competitor |
-| Project, Search Console connected, no data yet | `keyword-research` from seed topics, noting that Search Console data appears after Google has a few days of impressions | `competitive-landscape`; `competitor-analysis` if they name a competitor |
-| Project, Search Console connected with data | Start from their real queries: `keyword-research` on striking-distance queries (positions 5-20) | `keyword-clustering` to map their real queries to pages; `competitor-analysis` on whoever outranks them |
+| Project, Search Console not connected or expired | Connect or reconnect Search Console on the project's Integrations page in the app; it is free and their real data | `seo-audit` to crawl the site for technical issues (free); `keyword-research` from seed topics; `competitive-landscape`; `competitor-analysis` if they name a competitor |
+| Project, Search Console connected, no data yet | `keyword-research` from seed topics, noting that Search Console data appears after Google has a few days of impressions | `seo-audit` to check the site is crawlable and indexable; `competitive-landscape`; `competitor-analysis` if they name a competitor |
+| Project, Search Console connected with data | Start from their real queries: `keyword-research` on striking-distance queries (positions 5-20) | `seo-audit` for a health check, or to diagnose a traffic drop; `keyword-clustering` to map their real queries to pages; `competitor-analysis` on whoever outranks them |
 | Self-hosted, Search Console not configured | `seo-project-setup` step 6 to bring in Search Console CSV exports | `keyword-research` from seed topics; `competitive-landscape` |
 
 Rules for picking options:
@@ -89,6 +89,7 @@ Rules for picking options:
 - Never offer a workflow whose tools are not available. Without a connection, offer no research workflow other than `seo-project-setup`. Without a project, offer none other than `seo-project-setup`, because every research workflow needs a `projectId`.
 - Offer `link-prospecting` only when the user has a page or asset worth linking to, and `lead-teardown` only when they sell SEO to local businesses. Teardowns need a paid plan.
 - If `whoami` shows few credits left, favor the free Search Console paths and say why.
+- If the user says traffic, clicks, or rankings dropped, or asks for an audit or health check, offer `seo-audit` first, whatever their setup row says.
 
 Example, not connected:
 
@@ -119,6 +120,7 @@ Good places to start:
 - `keyword-clustering`: groups keywords by intent and maps clusters to existing or proposed pages.
 - `competitive-landscape`: identifies who wins across a market and what content/backlink patterns are working.
 - `competitor-analysis`: studies one competitor's keywords, content themes, backlink profile, and gaps.
+- `seo-audit`: crawls the site for technical issues, checks indexing, and diagnoses traffic drops from Search Console, with fixes ranked by impact. Mostly free.
 - `link-prospecting`: finds likely link opportunities, discovers contact paths, and drafts outreach.
 - `lead-teardown`: for people who sell SEO to local businesses — prospects a trade in a city and returns a one-page teardown per lead to pitch with.
 

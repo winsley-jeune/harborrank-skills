@@ -1,8 +1,8 @@
 {
   "name": "harborrank",
   "displayName": "HarborRank SEO",
-  "version": "1.3.0",
-  "description": "Do SEO by asking Claude: find keywords worth targeting, see why a competitor outranks you, check where you rank on Google Maps, find backlink opportunities, and plan pages that rank. Works on live Google data and your own Search Console through HarborRank (Free plan, no card). Eight guided workflows, from a beginner-friendly SEO coach to local SEO lead teardowns for agencies.",
+  "version": "1.4.0",
+  "description": "Do SEO by asking Claude: find keywords worth targeting, see why a competitor outranks you, check where you rank on Google Maps, audit your site and find why traffic dropped, find backlink opportunities, and plan pages that rank. Works on live Google data and your own Search Console through HarborRank (Free plan, no card). Nine guided workflows, from a beginner-friendly SEO coach to local SEO lead teardowns for agencies.",
   "author": {
     "name": "HarborRank",
     "url": "https://harborrank.com"
