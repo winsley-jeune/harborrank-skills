@@ -74,6 +74,8 @@ Traffic, clicks, impressions, search volume, keyword difficulty, keyword counts,
 - `get_audit_pages`: crawled pages with status code, title, description, word count, indexability, depth, and links. Filter by `fetchClass`, `statusCode`, or `urlContains`. Free.
 - `get_search_console_performance`: clicks, impressions, CTR, and average position by `query`, `page`, `country`, `device`, or `date`, for a `dateRange` or explicit `startDate`/`endDate`, with optional filters. Free.
 - `inspect_urls`: Google's URL Inspection for up to 10 URLs: indexed or not and why, last crawl, Google-selected vs declared canonical. Free.
+- `get_landing_page_performance`: Search Console clicks and position joined with Google Analytics organic sessions, engagement, key events (conversions) and revenue per landing page; also lists pages that earn Google clicks but never show up in Analytics (broken tracking). Needs Google Analytics connected for the project.
+- `get_analytics_report`: Google Analytics sessions, users, engagement and key events by channel, landing page, source, device, country or date, with optional `compareTo` (`previous_period` or `previous_year`). Needs Google Analytics connected.
 - `get_serp_results`: live Google results for up to 10 keywords, to see who took a lost query or which SERP features appeared. Charges credits (about 30 to 60 per keyword).
 - `get_domain_overview`: organic footprint estimate, for a site without Search Console. Charges credits.
 
@@ -83,7 +85,7 @@ Traffic, clicks, impressions, search volume, keyword difficulty, keyword counts,
 2. Call `run_site_audit`. Keep the default 50 pages for a quick check; for a full audit of a larger site ask before going above 500 pages, and say Free crawls stop at 500.
 3. Call `get_audit_status` until the audit is `completed`. Wait between checks rather than calling it back to back.
 4. Call `get_audit_issues` with `severity: "critical"`, then with `severity: "warning"`. Read `info` issues only if there is little else to fix.
-5. If Search Console is connected, call `get_search_console_performance` with `dimensions: ["page"]` and `dateRange: "last_3_months"`. Use clicks per page to rank the fixes: an issue on a page with clicks comes before the same issue on a page with none.
+5. If Search Console is connected, call `get_search_console_performance` with `dimensions: ["page"]` and `dateRange: "last_3_months"`. Use clicks per page to rank the fixes: an issue on a page with clicks comes before the same issue on a page with none. If Google Analytics is connected, call `get_landing_page_performance` instead: it returns the same clicks plus conversions per page, so an issue on a page that converts comes first, and any page in `pagesMissingFromAnalytics` is a tracking fix to report.
 6. Call `inspect_urls` for up to 10 URLs that matter most: top pages by clicks, plus pages flagged `noindex-page`, `canonicalized-page`, `canonical-conflict`, or `blocked-page`. Confirm what Google actually indexed instead of assuming.
 7. Group issues that share one cause. Duplicate titles across 200 pages from one template are one fix, not 200.
 8. Rank the fixes: indexing and crawl blockers first (blocked, server errors, broken pages, noindex or canonical mistakes on pages that should rank), then problems on high-click pages, then sitewide template fixes, then everything else.
@@ -93,6 +95,7 @@ Traffic, clicks, impressions, search volume, keyword difficulty, keyword counts,
 Search Console is required for this mode. If it is not connected, say so, point the user to the project's Integrations page in the HarborRank app (it is free), and run Workflow A meanwhile.
 
 1. Call `get_search_console_performance` with `dimensions: ["date"]` and `dateRange: "last_6_months"` (or `last_16_months` for a long view) to see when clicks and impressions changed. Use the user's date if they gave one, and confirm it in the data.
+   If Google Analytics is connected, also call `get_analytics_report` with `dimensions: ["sessionDefaultChannelGroup"]`, `metrics: ["sessions", "keyEvents"]` and `compareTo: "previous_period"` over the same dates. If only Organic Search fell, it is a search problem; if every channel fell at once, suspect broken tracking or a site outage before rankings.
 2. Pick two windows of equal length and the same weekdays: the weeks before the drop and the weeks after it. Do not include the last 3 days, which are incomplete.
 3. For each window, call `get_search_console_performance` with explicit `startDate` and `endDate`, first with `dimensions: ["page"]`, then with `dimensions: ["query"]`. List the pages and queries with the largest click losses.
 4. Classify each big loss by what moved:
