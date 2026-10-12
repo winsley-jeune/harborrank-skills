@@ -15,7 +15,7 @@ One install adds the HarborRank MCP server and all nine skills. Inside Claude Co
 /plugin install harborrank@harborrank
 ```
 
-Then run `/mcp`, pick `harborrank`, and sign in. The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
+Then run `/mcp`, pick `harborrank`, and sign in ([setup guide](https://harborrank.com/docs/skills/setup)). The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
 
 ## Requirements
 
@@ -59,17 +59,17 @@ If you install the files only, connect [HarborRank MCP](https://harborrank.com/d
 
 | Command | What it does |
 | --- | --- |
-| `/seo-project-setup` | Create a local workspace with goals, competitors, exports, and preferences that later sessions reuse. |
-| `/seo-coach` | Pick the next workflow when you are new to SEO or unsure what to run first. |
-| `/keyword-research` | Turn seed topics into a prioritized keyword shortlist with volume, difficulty, intent, and SERP caveats. |
-| `/keyword-clustering` | Group a keyword list by intent, map clusters to pages, and flag cannibalization. |
-| `/competitive-landscape` | Map who wins a market, why, and where the openings are. |
-| `/competitor-analysis` | Study one competitor's keywords, pages, and backlinks and turn it into takeaways. |
-| `/seo-audit` | Crawl the site for technical issues, check indexing, and find why traffic dropped, with fixes ranked by impact (mostly free). |
-| `/link-prospecting` | Find qualified link prospects and the angle that makes each one relevant. |
-| `/lead-teardown` | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
+| [`/seo-project-setup`](https://harborrank.com/docs/skills/seo-project-setup) | Create a local workspace with goals, competitors, exports, and preferences that later sessions reuse. |
+| [`/seo-coach`](https://harborrank.com/docs/skills/seo-coach) | Pick the next workflow when you are new to SEO or unsure what to run first. |
+| [`/keyword-research`](https://harborrank.com/docs/skills/keyword-research) | Turn seed topics into a prioritized keyword shortlist with volume, difficulty, intent, and SERP caveats. |
+| [`/keyword-clustering`](https://harborrank.com/docs/skills/keyword-clustering) | Group a keyword list by intent, map clusters to pages, and flag cannibalization. |
+| [`/competitive-landscape`](https://harborrank.com/docs/skills/competitive-landscape) | Map who wins a market, why, and where the openings are. |
+| [`/competitor-analysis`](https://harborrank.com/docs/skills/competitor-analysis) | Study one competitor's keywords, pages, and backlinks and turn it into takeaways. |
+| [`/seo-audit`](https://harborrank.com/docs/skills/seo-audit) | Crawl the site for technical issues, check indexing, and find why traffic dropped, with fixes ranked by impact (the crawl and Search Console checks use no credits). |
+| [`/link-prospecting`](https://harborrank.com/docs/skills/link-prospecting) | Find qualified link prospects and the angle that makes each one relevant. |
+| [`/lead-teardown`](https://harborrank.com/docs/skills/lead-teardown) | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
 
-Docs for every skill: https://harborrank.com/docs/skills
+Docs for every skill: [harborrank.com/docs/skills](https://harborrank.com/docs/skills). What the skills are for and how they compare: [Claude SEO skills built on live search data](https://harborrank.com/claude-seo-skills).
 
 ## License
 
