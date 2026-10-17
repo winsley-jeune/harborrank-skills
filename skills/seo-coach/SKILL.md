@@ -17,14 +17,14 @@ If neither tool is available, or `whoami` fails because the user is not signed i
 
 - Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
 - Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
-- Claude on the web, desktop or Cowork: open Customize, then Connectors, search for HarborRank, choose Connect, and sign in. The Free plan needs no card.
+- Claude on the web, desktop or Cowork: open Customize, then Connectors, search for HarborRank, choose Connect, and sign in. New accounts start with a 7-day free trial.
 - Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
 
 Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
 
 ### Plan limits
 
-On hosted HarborRank, research tools spend credits. The Free plan has 1,000 credits a month and one project; paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Full backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan; on Free, the backlinks tools return a preview (totals and the top 3 referring domains, about 50 credits) with an upgrade link.
+On hosted HarborRank, research tools spend credits. New accounts start with a 7-day free trial (1,000 research credits, one project); paid plans start at $29/month with 15,000 credits. Search Console, saved keywords, rank tracker reads, and site crawls use no credits. A keyword search costs about 50 credits and a domain overview about 80. Full backlinks, lead research (`research_lead`), and Lighthouse checks need a paid plan; on Free, the backlinks tools return a preview (totals and the top 3 referring domains, about 50 credits) with an upgrade link.
 
 - If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
 - If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan and pass on the upgrade link from the reply, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
@@ -52,7 +52,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 - Start with the label **Web-evidence only: no HarborRank data.**
 - Name the source (URL or file) of every figure you report.
-- End, after any recommended next workflow, with one sentence that names the numbers this report is missing: "Connect HarborRank (the Free plan needs no card) to add keyword metrics, rankings, and your Search Console data to this plan." Do not add more sales copy than that.
+- End, after any recommended next workflow, with one sentence that names the numbers this report is missing: "Connect HarborRank (start with a 7-day free trial) to add keyword metrics, rankings, and your Search Console data to this plan." Do not add more sales copy than that.
 
 ## Tone
 
@@ -130,7 +130,7 @@ Explain the difference between data sources:
 
 - HarborRank MCP tools provide SEO data such as keyword research, exact ranked keywords, search volume, SERPs, SERP competitors, local business and Maps data, domain overviews, backlinks, saved keywords, projects, and rank trackers.
 - Google Search Console (when connected on the project's Integrations page) is the user's own first-party data — real clicks, impressions, CTR, and position. Read it live with `get_search_console_performance` instead of asking for CSV exports. It's free (no credits) and the best starting point for "what already ranks" and near-ranking opportunities.
-- Credits: the Free plan has 1,000 research credits a month and one project; Search Console and saved keywords are free to read. Full backlinks and lead teardowns need a paid plan; Free gets a backlinks preview. Steer Free users toward Search Console first so their credits go further.
+- Credits: the 7-day free trial (and the Free plan of older accounts) has 1,000 research credits and one project; Search Console and saved keywords are free to read. Full backlinks and lead teardowns need a paid plan; Free gets a backlinks preview. Steer Free users toward Search Console first so their credits go further.
 - Web search can find current market context, recent pages, reviews, docs, social profiles, and contact paths outside HarborRank.
 - Browser/page scraping can extract page copy, headings, author names, contact links, schema, and content structure.
 - Local files can preserve strategy, GSC CSVs, content briefs, crawls, prospect lists, and prior decisions over time.
