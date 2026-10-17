@@ -18,6 +18,8 @@ If neither tool is available, or `whoami` fails because the user is not signed i
 - Claude Code with the HarborRank plugin: run `/mcp`, choose `harborrank`, and sign in.
 - Claude Code without the plugin: run `claude mcp add --transport http --scope user harborrank https://app.harborrank.com/mcp`, then `/mcp` to sign in.
 - Claude on the web, desktop or Cowork: open Customize, then Connectors, search for HarborRank, choose Connect, and sign in. New accounts start with a 7-day free trial.
+- Cursor with the HarborRank plugin: open Cursor Settings, then MCP, and sign in to `harborrank`.
+- Gemini CLI with the HarborRank extension: run `/mcp auth harborrank`.
 - Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
 
 Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.

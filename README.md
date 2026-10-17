@@ -4,7 +4,7 @@
 [![Indexed on TensorBlock MCP Index](https://mcp-index.tensorblock.co/v1/servers/harborrank-com-features-mcp-8cd89348/badge.svg)](https://tensorblock.co/mcp/servers/harborrank-com-features-mcp-8cd89348)
 [![HarborRank MCP server on Glama](https://glama.ai/mcp/connectors/com.harborrank/harborrank/badges/score.svg)](https://glama.ai/mcp/connectors/com.harborrank/harborrank)
 
-SEO workflows for Claude Code, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
+SEO workflows for Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
 
 ## Install as a Claude Code plugin (recommended)
 
@@ -17,10 +17,28 @@ One install adds the HarborRank MCP server and all nine skills. Inside Claude Co
 
 Then run `/mcp`, pick `harborrank`, and sign in ([setup guide](https://harborrank.com/docs/skills/setup)). The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
 
+## Install in Cursor
+
+Install **HarborRank SEO** from the Cursor Marketplace, or add the MCP server by hand in `~/.cursor/mcp.json`:
+
+```json
+{ "mcpServers": { "harborrank": { "url": "https://app.harborrank.com/mcp" } } }
+```
+
+Cursor opens the HarborRank login the first time it connects. The plugin also adds the nine skills.
+
+## Install as a Gemini CLI extension
+
+```
+gemini extensions install https://github.com/winsley-jeune/harborrank-skills
+```
+
+Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the nine skills.
+
 ## Requirements
 
 - A HarborRank account. Start free: new accounts get a 7-day free trial with 1,000 research credits, one project, Search Console, and Google Analytics. You add a card at signup; Basic ($29/month, 15,000 credits a month) starts when the trial ends unless you cancel from Billing first. Backlinks, lead research, and Lighthouse checks need a paid plan, and you can email support@harborrank.com within 7 days of the first charge for a full refund.
-- Claude Code (or another agent that reads `SKILL.md` files and can connect to a remote HTTP MCP server).
+- Claude Code, Cursor or Gemini CLI (or another agent that reads `SKILL.md` files and can connect to a remote HTTP MCP server).
 
 ## Example prompts
 
@@ -32,9 +50,9 @@ Then run `/mcp`, pick `harborrank`, and sign in ([setup guide](https://harborran
 ## What the plugin runs, sends and fetches
 
 - The skills are plain-text instructions. They run nothing on your machine and install no code.
-- `.mcp.json` points Claude Code at one remote MCP server, `https://app.harborrank.com/mcp`, over HTTPS with OAuth 2.0. No credentials are stored in this repository.
+- `.mcp.json` (Claude Code), `mcp.json` (Cursor) and `gemini-extension.json` (Gemini CLI) all point at one remote MCP server, `https://app.harborrank.com/mcp`, over HTTPS with OAuth 2.0. No credentials are stored in this repository.
 - Tool calls send the arguments you or the agent supply (keywords, domains, URLs, a project id) to HarborRank, which fetches SEO data from DataForSEO and, when you connect a property, read-only data from your Google Search Console and Google Analytics. Nothing is sent anywhere else.
-- Research and Google Analytics tools use plan credits; Search Console and saved-keyword reads use none. The tool descriptions state the cost before a call runs.
+- Research and Google Analytics tools use plan credits; Search Console and saved-keyword reads use none.
 - Privacy policy: https://harborrank.com/privacy. Terms: https://harborrank.com/terms-and-conditions. Support: support@harborrank.com.
 
 ## Install the skill files only

@@ -1,0 +1,37 @@
+{
+  "name": "harborrank",
+  "displayName": "HarborRank SEO",
+  "version": "1.7.0",
+  "description": "Do SEO by asking your AI agent: find keywords worth targeting, see why a competitor outranks you, check where you rank on Google Maps, audit your site and find why traffic dropped, find backlink opportunities, and plan pages that rank. Works on live Google data and your own Search Console and Google Analytics through the HarborRank MCP server (start with a 7-day free trial). Nine guided SEO workflows.",
+  "author": {
+    "name": "HarborRank",
+    "url": "https://harborrank.com"
+  },
+  "homepage": "https://harborrank.com/docs/mcp",
+  "repository": "https://github.com/winsley-jeune/harborrank-skills",
+  "license": "MIT",
+  "keywords": [
+    "seo",
+    "keyword-research",
+    "competitor-analysis",
+    "local-seo",
+    "google-maps",
+    "google-business-profile",
+    "backlinks",
+    "link-building",
+    "search-console",
+    "google-analytics",
+    "rank-tracking",
+    "site-audit",
+    "seo-audit",
+    "content-strategy",
+    "keyword-clustering",
+    "serp",
+    "small-business",
+    "seo-agency",
+    "lead-generation",
+    "marketing",
+    "mcp"
+  ],
+  "logo": "icon.png"
+}
