@@ -78,6 +78,7 @@ Traffic, clicks, impressions, search volume, keyword difficulty, keyword counts,
 - `get_analytics_report`: Google Analytics sessions, users, engagement and key events by channel, landing page, source, device, country or date, with optional `compareTo` (`previous_period` or `previous_year`). Needs Google Analytics connected.
 - `get_serp_results`: live Google results for up to 10 keywords, to see who took a lost query or which SERP features appeared. Charges credits (about 30 to 60 per keyword).
 - `get_domain_overview`: organic footprint estimate, for a site without Search Console. Charges credits.
+- `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Workflow A: Health audit
 
@@ -136,6 +137,7 @@ Close both with what was not checked (pages beyond the crawl budget, Lighthouse 
 
 - **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. If competitors took the lost queries, recommend `competitor-analysis` on the domain that gained. If pages compete for the same queries, recommend `keyword-clustering` on those queries. Otherwise recommend `keyword-research` on the striking-distance queries (positions 5 to 20) from Search Console.
 - **Where the output goes:** the report as `audits/<domain>-<YYYY-MM-DD>.md`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
+- **Shareable report:** once the work is done, offer one time to publish it as a shareable report with `create_share_report`: a read-only page at a link the user can send to a client, a boss or a teammate, no sign-in needed. Write it from this output: findings first, then next steps, then the supporting table. Publish only after the user says yes, and leave out their Search Console and Google Analytics numbers unless they agree to share them. Give them the link; `delete_share_report` removes it.
 
 ## Guardrails
 

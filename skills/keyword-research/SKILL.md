@@ -71,6 +71,7 @@ If `projectId` is missing, use `list_projects` first. If the target market/locat
 - `search_local_businesses`, `get_local_serp_results`, and `get_google_business_questions`: use for local SEO topics when a business/location radius matters.
 - `list_saved_keywords`: avoid duplicating already-saved work or use existing tags as context.
 - `save_keywords`: save selected keywords only after explicit user confirmation.
+- `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Workflow
 
@@ -109,6 +110,7 @@ End with whether to save the chosen keywords.
 
 - **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `keyword-clustering` on the shortlist, to decide which page targets each keyword. If one domain holds the top results for most of the shortlist, recommend `competitor-analysis` on that domain instead.
 - **Where the output goes:** the opportunity table as `keywords/<topic>-<YYYY-MM-DD>.csv`, with the summary at the top of `keywords/<topic>-<YYYY-MM-DD>.md`. Keywords the user approves are also saved to the HarborRank project with `save_keywords`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
+- **Shareable report:** once the work is done, offer one time to publish it as a shareable report with `create_share_report`: a read-only page at a link the user can send to a client, a boss or a teammate, no sign-in needed. Write it from this output: findings first, then next steps, then the supporting table. Publish only after the user says yes, and leave out their Search Console and Google Analytics numbers unless they agree to share them. Give them the link; `delete_share_report` removes it.
 
 ## Guardrails
 

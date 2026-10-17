@@ -71,6 +71,7 @@ If keywords are not provided, use `list_saved_keywords` for saved sets, `researc
 - `search_local_businesses`: find the businesses and categories around a location before mapping local clusters.
 - `get_local_serp_results`: use for local SEO clusters when Maps/local-pack intent should affect page mapping.
 - `save_keywords`: optionally tag final clusters after user confirmation.
+- `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Workflow
 
@@ -115,6 +116,7 @@ For each cluster, include a recommended page brief:
 
 - **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `competitor-analysis` on the domain that holds the top result for the highest-priority cluster's primary keyword, to see what the new or updated page has to beat.
 - **Where the output goes:** the cluster table as `keywords/clusters-<YYYY-MM-DD>.csv` and one brief per cluster as `content/briefs/<cluster-slug>.md`. Cluster tags go to the HarborRank project only after the user confirms. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
+- **Shareable report:** once the work is done, offer one time to publish it as a shareable report with `create_share_report`: a read-only page at a link the user can send to a client, a boss or a teammate, no sign-in needed. Write it from this output: findings first, then next steps, then the supporting table. Publish only after the user says yes, and leave out their Search Console and Google Analytics numbers unless they agree to share them. Give them the link; `delete_share_report` removes it.
 
 ## Guardrails
 

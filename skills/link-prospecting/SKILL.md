@@ -69,6 +69,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 - `get_ranked_keywords`: understand what a prospect or competitor ranks for when topical fit matters.
 - `search_local_businesses` and `get_local_serp_results`: use for local SEO link prospecting when nearby businesses, local competitors, or Maps/category signals can reveal partnership targets.
 - `research_keywords`: expand prospecting queries.
+- `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Contact discovery tools
 
@@ -144,6 +145,7 @@ Then provide 2-3 reusable outreach drafts:
 
 - **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `keyword-research` to pick the next page worth building and promoting, since links work best when pointed at a page that targets a winnable query.
 - **Where the output goes:** the prospect table as `outreach/prospects-<asset-slug>-<YYYY-MM-DD>.csv` and the drafts as `outreach/drafts-<asset-slug>-<YYYY-MM-DD>.md`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
+- **Shareable report:** once the work is done, offer one time to publish it as a shareable report with `create_share_report`: a read-only page at a link the user can send to a client, a boss or a teammate, no sign-in needed. Write it from this output: findings first, then next steps, then the supporting table. Publish only after the user says yes, and leave out their Search Console and Google Analytics numbers unless they agree to share them. Give them the link; `delete_share_report` removes it.
 
 ## Guardrails
 

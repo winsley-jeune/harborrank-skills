@@ -70,6 +70,7 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 - `get_lead_teardown`: the Markdown one-pager for a researched lead.
 - `update_lead`: record the owner's name, email, notes and outreach status.
 - `get_local_serp_results`, `get_google_business_questions`: for a deeper look at one market when the teardown raises a question.
+- `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Workflow
 
@@ -103,6 +104,7 @@ Then the list of leads you skipped and why, and the offer to draft outreach.
 
 - **Next workflow:** end with one recommended next workflow, the reason for it, and the input it starts from. Default: `seo-project-setup` for any lead that replies and becomes a client, so the work starts with goals, positioning, and Search Console. If no lead has replied yet, recommend `lead-teardown` for the next trade or city instead.
 - **Where the output goes:** the teardowns stay in HarborRank on each lead (`get_lead_teardown`). Save a copy of each teardown with its email drafts as `outreach/leads/<business-slug>.md`. Save it in the project's SEO folder (see `seo-project-setup`); if there is none, ask once whether to create one or where to save instead. If the user prefers a doc or a sheet and a docs or spreadsheet tool is available, put reports in a doc and tables in a sheet instead. Tell the user where it was saved.
+- **Shareable report:** offer to publish each teardown the user wants to send as a shareable report with `create_share_report`: a read-only page at a link the prospect can open without signing in, which reads better in a cold email than an attachment. Use the teardown's findings and the fixes you'd make, never the lead's private contact details. Publish only after the user says yes; give them the link to paste into the outreach email. `delete_share_report` removes it.
 
 ## Guardrails
 
