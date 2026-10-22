@@ -27,6 +27,8 @@ If neither tool is available, or `whoami` fails because the user is not signed i
 - Gemini CLI with the HarborRank extension: run `/mcp auth harborrank`.
 - Other clients: add `https://app.harborrank.com/mcp` as a remote MCP server. Setup for each client is at https://harborrank.com/docs/mcp.
 
+Tell them what happens when they connect, so the sign-in page is no surprise: they sign in to HarborRank with Google or email, a new account adds a card and gets 7 days free with 1,000 research credits, and Basic ($29 a month) starts after day 7 unless they cancel from Billing in the app first. Then they come back to this conversation and say "connected", and you pick up the task where it stopped.
+
 Do not stop there. Continue in fallback mode (below). If the user connects HarborRank mid-task, run Step 0 again and switch to the full workflow.
 
 ### Plan limits

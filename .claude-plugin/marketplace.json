@@ -10,7 +10,7 @@
       "name": "harborrank",
       "source": "./",
       "description": "Do SEO by asking Claude: find keywords worth targeting, see why a competitor outranks you, check where you rank on Google Maps, audit your site and find why traffic dropped, find backlink opportunities, and plan pages that rank. Works on live Google data and your own Search Console and Google Analytics through HarborRank (start with a 7-day free trial). Nine guided workflows, from a beginner-friendly SEO coach to local SEO lead teardowns for agencies.",
-      "version": "1.7.0",
+      "version": "1.8.0",
       "category": "productivity",
       "keywords": [
         "seo",

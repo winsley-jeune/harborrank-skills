@@ -4,9 +4,17 @@
 [![Indexed on TensorBlock MCP Index](https://mcp-index.tensorblock.co/v1/servers/harborrank-com-features-mcp-8cd89348/badge.svg)](https://tensorblock.co/mcp/servers/harborrank-com-features-mcp-8cd89348)
 [![HarborRank MCP server on Glama](https://glama.ai/mcp/connectors/com.harborrank/harborrank/badges/score.svg)](https://glama.ai/mcp/connectors/com.harborrank/harborrank)
 
-SEO workflows for Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
+SEO workflows for Claude, Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
 
-## Install as a Claude Code plugin (recommended)
+## Install in Claude (web, desktop, Cowork)
+
+1. Install **HarborRank SEO** from the plugin directory, or add the **HarborRank** connector (Customize, then Connectors).
+2. Choose Connect and sign in to HarborRank with Google or email. A new account adds a card and gets 7 days free with 1,000 research credits; Basic ($29 a month) starts after day 7 unless you cancel from Billing in the app first.
+3. Back in Claude, ask for something real, for example "Find 20 low-difficulty keywords for mysite.com and save the best ones to my project" or "Which of my pages sit at positions 8 to 20 in Search Console?"
+
+If you ask before connecting, Claude says HarborRank isn't connected, gives these steps, and picks the task back up once you say "connected".
+
+## Install as a Claude Code plugin
 
 One install adds the HarborRank MCP server and all nine skills. Inside Claude Code:
 
