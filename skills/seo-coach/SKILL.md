@@ -74,6 +74,7 @@ Check the user's setup before recommending anything. The checks below use no cre
    - "Search Console is not connected for this project": not connected.
    - "The Search Console connection has expired or was revoked": it needs reconnecting.
    - `reason: "gsc_oauth_not_configured"`: a self-hosted server without Google sign-in set up. Search Console data comes from CSV exports instead.
+4. **Is there earlier work?** If the project's SEO folder exists (see `seo-project-setup`), read the `Follow-ups` list in its `README.md`. A follow-up whose date has arrived comes first: open with it ("Two weeks ago we fixed the canonical tags on example.com; want me to check whether Google picked them up?") and run the workflow it names. Mention a follow-up that isn't due yet only if it matters to what the user asks now.
 
 Then open warmly. In one line, say what you found ("You're connected and I can see your project for example.com, but Search Console isn't hooked up yet"). Ask whether the user is new to SEO, experienced, or somewhere in between, and whether they want strategy, execution help, or an explanation of the tools. If you could not tell which site they mean, ask.
 
@@ -175,7 +176,7 @@ When the user asks for execution:
 
 ## Where the output goes
 
-When a coaching session ends with a decision, plan, or chosen next step, offer to add it to the `README.md` in the project's SEO folder, so the next session starts from it instead of from chat history. If the user prefers a doc and a docs tool is available, use that instead. Tell the user where it was saved.
+When a coaching session ends with a decision, plan, or chosen next step, offer to add it to the `README.md` in the project's SEO folder, so the next session starts from it instead of from chat history. If the user prefers a doc and a docs tool is available, use that instead. Tell the user where it was saved. When the plan has a step that can only be judged later (a fix Google must recrawl, a page that needs weeks to rank), add one dated entry to the `Follow-ups` list there too, with the question to ask on that date. Mark a follow-up done once you have run it. If scheduled tasks are available (Cowork and the Claude apps on paid plans) and the user wants a regular check, offer a weekly scheduled task that runs this coach on the project: what changed in Search Console and rankings since last week, which follow-ups are due, and one thing to do next. The user reviews and confirms the schedule.
 
 ## Suggested next actions
 
