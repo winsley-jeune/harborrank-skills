@@ -1,5 +1,8 @@
 # Versions
 
+## 1.11.0
+- New skills: `keyword-cannibalization`, `google-business-profile`, `schema-markup`, `ai-search-visibility` and `seo-proposal`.
+
 ## 1.10.0
 - New skills: `seo-context` (the one-page context file every workflow reads first), `local-seo`, `content-brief` and `client-seo-report`.
 - Every workflow reads `seo-context.md` first when the project has one.

@@ -20,7 +20,7 @@ If you ask before connecting, Claude says HarborRank isn't connected, gives thes
 
 ## Install as a Claude Code plugin
 
-One install adds the HarborRank MCP server and all thirteen skills. Inside Claude Code:
+One install adds the HarborRank MCP server and all eighteen skills. Inside Claude Code:
 
 ```
 /plugin marketplace add winsley-jeune/harborrank-skills
@@ -37,7 +37,7 @@ Install **HarborRank SEO** from the Cursor Marketplace, or add the MCP server by
 { "mcpServers": { "harborrank": { "url": "https://app.harborrank.com/mcp" } } }
 ```
 
-Cursor opens the HarborRank login the first time it connects. The plugin also adds the thirteen skills.
+Cursor opens the HarborRank login the first time it connects. The plugin also adds the eighteen skills.
 
 ## Install as a Gemini CLI extension
 
@@ -45,7 +45,7 @@ Cursor opens the HarborRank login the first time it connects. The plugin also ad
 gemini extensions install https://github.com/winsley-jeune/harborrank-skills
 ```
 
-Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the thirteen skills.
+Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the eighteen skills.
 
 ## Requirements
 
@@ -100,6 +100,11 @@ If you install the files only, connect [HarborRank MCP](https://harborrank.com/d
 | `/content-brief` | Turn one target keyword into a brief built from the live SERP: questions to answer, what to add that page one lacks, outline, links, schema and title. |
 | `/local-seo` | Check where a local business ranks in Google Maps across its service area, compare it with the businesses above it, and get a local action plan. |
 | `/client-seo-report` | Write a monthly SEO report for a client or boss from Search Console, Analytics and rank tracking, and publish it as a shareable link. |
+| `/keyword-cannibalization` | Find queries where two of your pages compete in Search Console, fix only the splits that cost traffic, and check Google's chosen canonical. |
+| `/google-business-profile` | Audit a Google Business Profile against the Maps leaders: categories, services, description, reviews, Q&A, NAP and landing page, with ready-to-paste text. |
+| `/schema-markup` | Find the structured data each page type has, write JSON-LD that matches the visible content, and validate it. |
+| `/ai-search-visibility` | See how often AI assistants send visits and cite the site, which sources they cite instead, and what to change to get cited. |
+| `/seo-proposal` | Turn a prospect's teardown into an SEO proposal: current state with numbers, opportunity ranges, a 90-day plan, and a cover email. |
 | [`/link-prospecting`](https://harborrank.com/docs/skills/link-prospecting?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Find qualified link prospects and the angle that makes each one relevant. |
 | [`/lead-teardown`](https://harborrank.com/docs/skills/lead-teardown?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
 
