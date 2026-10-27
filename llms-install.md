@@ -24,6 +24,6 @@ HarborRank is a hosted (remote) MCP server. There is nothing to clone, build or 
 
 Some research calls take 20 to 60 seconds, so keep the timeout at 120 seconds or more.
 
-Optional: the `skills/` folder in this repository holds nine SEO workflows (keyword research, competitor analysis, site audit and more) as `SKILL.md` files that any agent can follow.
+Optional: the `skills/` folder in this repository holds thirteen SEO workflows (keyword research, competitor analysis, site audit and more) as `SKILL.md` files that any agent can follow.
 
 Docs: https://harborrank.com/docs/mcp · Support: support@harborrank.com

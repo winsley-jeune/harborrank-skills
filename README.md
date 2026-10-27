@@ -4,7 +4,11 @@
 [![Indexed on TensorBlock MCP Index](https://mcp-index.tensorblock.co/v1/servers/harborrank-com-features-mcp-8cd89348/badge.svg)](https://tensorblock.co/mcp/servers/harborrank-com-features-mcp-8cd89348)
 [![HarborRank MCP server on Glama](https://glama.ai/mcp/connectors/com.harborrank/harborrank/badges/score.svg)](https://glama.ai/mcp/connectors/com.harborrank/harborrank)
 
-SEO workflows for Claude, Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Each skill is one slash command. The skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
+Built by [HarborRank](https://harborrank.com/?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills). Free, MIT-licensed SEO workflows for Claude, Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Every skill works on its own from web evidence and your files, and gets live numbers when HarborRank is connected.
+
+**Contributions welcome.** Found a way to improve a skill or have a new SEO workflow to add? See [CONTRIBUTING.md](CONTRIBUTING.md) and open a PR.
+
+Each skill is one slash command. With HarborRank connected, the skills pull live data through the [HarborRank MCP server](https://harborrank.com/docs/mcp?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills): keyword metrics, SERPs, ranked keywords, backlinks, rank tracking, Google Search Console, and Google Analytics.
 
 ## Install in Claude (web, desktop, Cowork)
 
@@ -16,14 +20,14 @@ If you ask before connecting, Claude says HarborRank isn't connected, gives thes
 
 ## Install as a Claude Code plugin
 
-One install adds the HarborRank MCP server and all nine skills. Inside Claude Code:
+One install adds the HarborRank MCP server and all thirteen skills. Inside Claude Code:
 
 ```
 /plugin marketplace add winsley-jeune/harborrank-skills
 /plugin install harborrank@harborrank
 ```
 
-Then run `/mcp`, pick `harborrank`, and sign in ([setup guide](https://harborrank.com/docs/skills/setup)). The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
+Then run `/mcp`, pick `harborrank`, and sign in ([setup guide](https://harborrank.com/docs/skills/setup?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills)). The first MCP call opens the HarborRank login in your browser. Installed this way the skills run as `/harborrank:<name>`, for example `/harborrank:keyword-research`.
 
 ## Install in Cursor
 
@@ -33,7 +37,7 @@ Install **HarborRank SEO** from the Cursor Marketplace, or add the MCP server by
 { "mcpServers": { "harborrank": { "url": "https://app.harborrank.com/mcp" } } }
 ```
 
-Cursor opens the HarborRank login the first time it connects. The plugin also adds the nine skills.
+Cursor opens the HarborRank login the first time it connects. The plugin also adds the thirteen skills.
 
 ## Install as a Gemini CLI extension
 
@@ -41,7 +45,7 @@ Cursor opens the HarborRank login the first time it connects. The plugin also ad
 gemini extensions install https://github.com/winsley-jeune/harborrank-skills
 ```
 
-Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the nine skills.
+Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the thirteen skills.
 
 ## Requirements
 
@@ -61,7 +65,7 @@ Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the
 - `.mcp.json` (Claude Code), `mcp.json` (Cursor) and `gemini-extension.json` (Gemini CLI) all point at one remote MCP server, `https://app.harborrank.com/mcp`, over HTTPS with OAuth 2.0. No credentials are stored in this repository.
 - Tool calls send the arguments you or the agent supply (keywords, domains, URLs, a project id) to HarborRank, which fetches SEO data from DataForSEO and, when you connect a property, read-only data from your Google Search Console and Google Analytics. Nothing is sent anywhere else.
 - Research and Google Analytics tools use plan credits; Search Console and saved-keyword reads use none.
-- Privacy policy: https://harborrank.com/privacy. Terms: https://harborrank.com/terms-and-conditions. Support: support@harborrank.com.
+- Privacy policy: https://harborrank.com/privacy.?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Terms: https://harborrank.com/terms-and-conditions.?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Support: support@harborrank.com.
 
 ## Install the skill files only
 
@@ -79,23 +83,27 @@ npx skills add winsley-jeune/harborrank-skills --skill '*' --agent claude-code
 
 Or copy the folders under `skills/` into `~/.claude/skills/` (Claude Code) or `~/.codex/skills/` (Codex).
 
-If you install the files only, connect [HarborRank MCP](https://harborrank.com/docs/mcp) first. The skill files are instructions, not data: without the MCP connection your agent only has what it can see on its own.
+If you install the files only, connect [HarborRank MCP](https://harborrank.com/docs/mcp?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) first. The skill files are instructions, not data: without the MCP connection your agent only has what it can see on its own.
 
 ## Skills
 
 | Command | What it does |
 | --- | --- |
-| [`/seo-project-setup`](https://harborrank.com/docs/skills/seo-project-setup) | Create a local workspace with goals, competitors, exports, and preferences that later sessions reuse. |
-| [`/seo-coach`](https://harborrank.com/docs/skills/seo-coach) | Pick the next workflow when you are new to SEO or unsure what to run first. |
-| [`/keyword-research`](https://harborrank.com/docs/skills/keyword-research) | Turn seed topics into a prioritized keyword shortlist with volume, difficulty, intent, and SERP caveats. |
-| [`/keyword-clustering`](https://harborrank.com/docs/skills/keyword-clustering) | Group a keyword list by intent, map clusters to pages, and flag cannibalization. |
-| [`/competitive-landscape`](https://harborrank.com/docs/skills/competitive-landscape) | Map who wins a market, why, and where the openings are. |
-| [`/competitor-analysis`](https://harborrank.com/docs/skills/competitor-analysis) | Study one competitor's keywords, pages, and backlinks and turn it into takeaways. |
-| [`/seo-audit`](https://harborrank.com/docs/skills/seo-audit) | Crawl the site for technical issues, check indexing, and find why traffic dropped, with fixes ranked by impact (the crawl and Search Console checks use no credits). |
-| [`/link-prospecting`](https://harborrank.com/docs/skills/link-prospecting) | Find qualified link prospects and the angle that makes each one relevant. |
-| [`/lead-teardown`](https://harborrank.com/docs/skills/lead-teardown) | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
+| [`/seo-project-setup`](https://harborrank.com/docs/skills/seo-project-setup?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Create a local workspace with goals, competitors, exports, and preferences that later sessions reuse. |
+| `/seo-context` | Write the one-page context file (site, market, audience, competitors, goals) that every other skill reads first. |
+| [`/seo-coach`](https://harborrank.com/docs/skills/seo-coach?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Pick the next workflow when you are new to SEO or unsure what to run first. |
+| [`/keyword-research`](https://harborrank.com/docs/skills/keyword-research?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Turn seed topics into a prioritized keyword shortlist with volume, difficulty, intent, and SERP caveats. |
+| [`/keyword-clustering`](https://harborrank.com/docs/skills/keyword-clustering?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Group a keyword list by intent, map clusters to pages, and flag cannibalization. |
+| [`/competitive-landscape`](https://harborrank.com/docs/skills/competitive-landscape?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Map who wins a market, why, and where the openings are. |
+| [`/competitor-analysis`](https://harborrank.com/docs/skills/competitor-analysis?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Study one competitor's keywords, pages, and backlinks and turn it into takeaways. |
+| [`/seo-audit`](https://harborrank.com/docs/skills/seo-audit?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Crawl the site for technical issues, check indexing, and find why traffic dropped, with fixes ranked by impact (the crawl and Search Console checks use no credits). |
+| `/content-brief` | Turn one target keyword into a brief built from the live SERP: questions to answer, what to add that page one lacks, outline, links, schema and title. |
+| `/local-seo` | Check where a local business ranks in Google Maps across its service area, compare it with the businesses above it, and get a local action plan. |
+| `/client-seo-report` | Write a monthly SEO report for a client or boss from Search Console, Analytics and rank tracking, and publish it as a shareable link. |
+| [`/link-prospecting`](https://harborrank.com/docs/skills/link-prospecting?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Find qualified link prospects and the angle that makes each one relevant. |
+| [`/lead-teardown`](https://harborrank.com/docs/skills/lead-teardown?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) | Prospect local businesses in a trade and city, research each one, and get a one-page teardown to send as the pitch (research needs a paid plan). |
 
-Docs for every skill: [harborrank.com/docs/skills](https://harborrank.com/docs/skills). What the skills are for and how they compare: [Claude SEO skills built on live search data](https://harborrank.com/claude-seo-skills).
+Docs for every skill: [harborrank.com/docs/skills](https://harborrank.com/docs/skills?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills). What the skills are for and how they compare: [Claude SEO skills built on live search data](https://harborrank.com/claude-seo-skills?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills).
 
 ## License
 

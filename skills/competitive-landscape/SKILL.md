@@ -61,6 +61,8 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 ## Required inputs
 
+If the project's SEO folder has `seo-context.md` (see `seo-context`), read it first for the site, market, audience, competitors and goals, and ask only for what it doesn't cover.
+
 - `projectId`
 - Topic, seed keywords, market/category, or user's domain
 - Optional known competitors

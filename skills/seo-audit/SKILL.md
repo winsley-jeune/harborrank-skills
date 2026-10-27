@@ -66,6 +66,8 @@ Traffic, clicks, impressions, search volume, keyword difficulty, keyword counts,
 
 ## Required inputs
 
+If the project's SEO folder has `seo-context.md` (see `seo-context`), read it first for the site, market, audience, competitors and goals, and ask only for what it doesn't cover.
+
 - `projectId` (from `list_projects`)
 - The site URL to audit (default: the project's domain)
 - For a traffic drop: the approximate date it started, if the user knows it

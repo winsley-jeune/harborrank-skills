@@ -74,7 +74,7 @@ Check the user's setup before recommending anything. The checks below use no cre
    - "Search Console is not connected for this project": not connected.
    - "The Search Console connection has expired or was revoked": it needs reconnecting.
    - `reason: "gsc_oauth_not_configured"`: a self-hosted server without Google sign-in set up. Search Console data comes from CSV exports instead.
-4. **Is there earlier work?** If the project's SEO folder exists (see `seo-project-setup`), read the `Follow-ups` list in its `README.md`. A follow-up whose date has arrived comes first: open with it ("Two weeks ago we fixed the canonical tags on example.com; want me to check whether Google picked them up?") and run the workflow it names. Mention a follow-up that isn't due yet only if it matters to what the user asks now.
+4. **Is there earlier work?** If the project's SEO folder exists (see `seo-project-setup`), read `seo-context.md` for the site, goals and competitors (offer `seo-context` if it's missing), and read the `Follow-ups` list in its `README.md`. A follow-up whose date has arrived comes first: open with it ("Two weeks ago we fixed the canonical tags on example.com; want me to check whether Google picked them up?") and run the workflow it names. Mention a follow-up that isn't due yet only if it matters to what the user asks now.
 
 Then open warmly. In one line, say what you found ("You're connected and I can see your project for example.com, but Search Console isn't hooked up yet"). Ask whether the user is new to SEO, experienced, or somewhere in between, and whether they want strategy, execution help, or an explanation of the tools. If you could not tell which site they mean, ask.
 

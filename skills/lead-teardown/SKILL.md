@@ -60,6 +60,8 @@ Traffic, search volume, keyword difficulty, CPC, keyword counts, rankings, backl
 
 ## Required inputs
 
+If the project's SEO folder has `seo-context.md` (see `seo-context`), read it first for the site, market, audience, competitors and goals, and ask only for what it doesn't cover.
+
 - `projectId`
 - A trade or Google Business category (e.g. `roofing_contractor`, `dentist`, `electrician`)
 - A city (city mode) or a coordinate and radius (coordinate mode)
