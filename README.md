@@ -1,10 +1,10 @@
-# HarborRank Agent Skills
+# Claude SEO skills and SEO MCP server (HarborRank)
 
 [![smithery badge](https://smithery.ai/badge/jeunewinsley9/harborrank)](https://smithery.ai/servers/jeunewinsley9/harborrank)
 [![Indexed on TensorBlock MCP Index](https://mcp-index.tensorblock.co/v1/servers/harborrank-com-features-mcp-8cd89348/badge.svg)](https://tensorblock.co/mcp/servers/harborrank-com-features-mcp-8cd89348)
 [![HarborRank MCP server on Glama](https://glama.ai/mcp/connectors/com.harborrank/harborrank/badges/score.svg)](https://glama.ai/mcp/connectors/com.harborrank/harborrank)
 
-Built by [HarborRank](https://harborrank.com/?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills). Free, MIT-licensed SEO workflows for Claude, Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Every skill works on its own from web evidence and your files, and gets live numbers when HarborRank is connected.
+Eighteen free, MIT-licensed Claude SEO skills, plus the [HarborRank](https://harborrank.com/?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills) SEO MCP server that gives them live keyword, SERP, backlink and Google Search Console data. They work in Claude, Claude Code, Cursor, Gemini CLI, Codex, and other agents that support `SKILL.md` files. Every skill works on its own from web evidence and your files, and gets live numbers when HarborRank is connected.
 
 **Contributions welcome.** Found a way to improve a skill or have a new SEO workflow to add? See [CONTRIBUTING.md](CONTRIBUTING.md) and open a PR.
 
@@ -65,7 +65,7 @@ Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the
 - `.mcp.json` (Claude Code), `mcp.json` (Cursor) and `gemini-extension.json` (Gemini CLI) all point at one remote MCP server, `https://app.harborrank.com/mcp`, over HTTPS with OAuth 2.0. No credentials are stored in this repository.
 - Tool calls send the arguments you or the agent supply (keywords, domains, URLs, a project id) to HarborRank, which fetches SEO data from DataForSEO and, when you connect a property, read-only data from your Google Search Console and Google Analytics. Nothing is sent anywhere else.
 - Research and Google Analytics tools use plan credits; Search Console and saved-keyword reads use none.
-- Privacy policy: https://harborrank.com/privacy.?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Terms: https://harborrank.com/terms-and-conditions.?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Support: support@harborrank.com.
+- Privacy policy: https://harborrank.com/privacy?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Terms: https://harborrank.com/terms-and-conditions?utm_source=github&utm_medium=readme&utm_campaign=harborrank-skills Support: support@harborrank.com.
 
 ## Install the skill files only
 
