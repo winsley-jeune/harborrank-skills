@@ -39,6 +39,10 @@ Install **HarborRank SEO** from the Cursor Marketplace, or add the MCP server by
 
 Cursor opens the HarborRank login the first time it connects. The plugin also adds the eighteen skills.
 
+## Install in ChatGPT
+
+Add [HarborRank from ChatGPT's plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6ac8ca2f7924819194a7f81d93adda2f) and sign in when ChatGPT asks. It connects the same MCP server; the skills in this repository are for agents that read `SKILL.md` files.
+
 ## Install as a Gemini CLI extension
 
 ```
