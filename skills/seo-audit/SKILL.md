@@ -40,7 +40,8 @@ Most of this audit is free: the crawl, the issue report, Search Console performa
 - If `creditsRemaining` will not cover the planned calls, give the user the estimate and ask before spending. Use the free tools first.
 - If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan and pass on the upgrade link from the reply, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
 - If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have. If `whoami` warns that credits are low, say so before a large run.
-- If the user asks to upgrade, change plan or buy credits, call `get_upgrade_link` (no credits) and give them the link. They pay on HarborRank with PayPal; never say the upgrade is done until `whoami` shows the new plan.
+- If a HarborRank tool says the free trial hasn't started, or that credits ran out, give the user the link from that reply exactly as written, as a clickable link, and wait for them to say they're done before calling HarborRank again. Don't switch to answering without HarborRank data unless they ask you to.
+- If the user asks to upgrade, change plan or buy credits, call `get_upgrade_link` (no credits) and give them the link. They pay on HarborRank by card; never say the upgrade is done until `whoami` shows the new plan.
 - When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
 
 ### Fallback mode (no HarborRank connection)

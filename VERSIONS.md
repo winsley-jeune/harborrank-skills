@@ -1,5 +1,9 @@
 # Versions
 
+## 1.11.1
+- When a tool says the free trial hasn't started or credits ran out, every skill passes the link on exactly as written and waits.
+- Upgrades are paid by card.
+
 ## 1.11.0
 - New skills: `keyword-cannibalization`, `google-business-profile`, `schema-markup`, `ai-search-visibility` and `seo-proposal`.
 
