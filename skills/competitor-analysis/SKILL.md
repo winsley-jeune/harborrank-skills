@@ -36,6 +36,8 @@ On hosted HarborRank, research tools spend credits. New accounts start with a 7-
 - If a tool replies that a feature "is included in paid plans", tell the user once which feature needs a paid plan and pass on the upgrade link from the reply, skip that tool for the rest of the run, and finish with the other evidence. Do not retry it.
 - If a tool fails for insufficient credits, stop making paid calls, tell the user, and finish with free tools and the data you already have. If `whoami` warns that credits are low, say so before a large run.
 - If a HarborRank tool says the free trial hasn't started, or that credits ran out, give the user the link from that reply exactly as written, as a clickable link, and wait for them to say they're done before calling HarborRank again. Don't switch to answering without HarborRank data unless they ask you to.
+- Two extras are included in Pro and Agency: local grids larger than 5x5 (a 7x7 `run_local_grid`) and more than 3 tracked competitors per rank tracker (`add_rank_tracker_competitors`). If a tool replies that something needs Pro or Agency, tell the user once what Pro adds, pass on the Pro link from the reply exactly as written, and carry on with what their plan includes (a 5x5 grid, the first 3 competitors). Do not retry it.
+- Mention Pro unprompted only when the task needs it: a whole-town map, or watching more than 3 competitors. Say it once per run, in one sentence, with the link from `get_upgrade_link` (`plan: "pro"`).
 - If the user asks to upgrade, change plan or buy credits, call `get_upgrade_link` (no credits) and give them the link. They pay on HarborRank by card; never say the upgrade is done until `whoami` shows the new plan.
 - When `whoami` returns `mode: "self-hosted"`, there are no plan gates.
 
@@ -80,6 +82,7 @@ If the project's SEO folder has `seo-context.md` (see `seo-context`), read it fi
 - `search_local_businesses`, `get_local_serp_results`, and `get_google_business_questions`: use for local SEO competitors when Maps/local-pack visibility, nearby businesses, categories, or Google Q&A matter.
 - `get_serp_results`: validate direct head-to-head SERPs for important keywords.
 - `research_keywords`: expand gaps or category terms when needed.
+- `get_rank_tracker`, `add_rank_tracker_competitors`: read the user's rank trackers, and add competitor domains to one so every check also records where they rank for the tracked keywords. Adding a competitor uses no credits. Basic compares up to 3 per tracker; Pro and Agency up to 10.
 - `create_share_report`: publish the finished work as a read-only page at a shareable link (see "Shareable report" below). Only after the user agrees.
 
 ## Workflow
@@ -104,6 +107,7 @@ If the project's SEO folder has `seo-context.md` (see `seo-context`), read it fi
     - Where they are vulnerable
     - Which pages/keywords to pursue
     - What to avoid copying
+11. If the user's project has a rank tracker (`get_rank_tracker`) and the competitor shares its keywords, offer once to keep watching it: `add_rank_tracker_competitors` with the tracker ID and the competitor's domain. Its positions show next to the user's from the next check. Add it only after the user says yes.
 
 ## Output format
 
