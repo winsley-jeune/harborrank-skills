@@ -1,5 +1,11 @@
 # Versions
 
+## 1.12.0
+- `local-seo` scans a grid of points with `run_local_grid` (saved as a heatmap in the project) and re-runs the same grid at check-back; sampling points by hand stays as the fallback.
+- `lead-teardown` can add a grid scan for the leads the user pitches first.
+- `competitor-analysis` offers to keep watching the competitor in the user's rank tracker with `add_rank_tracker_competitors`.
+- These skills say which extras need Pro or Agency (7x7 grids, more than 3 tracked competitors), pass on the Pro link once and carry on with the smaller option.
+
 ## 1.11.1
 - When a tool says the free trial hasn't started or credits ran out, every skill passes the link on exactly as written and waits.
 - Upgrades are paid by card.
