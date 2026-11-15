@@ -1,5 +1,8 @@
 # Versions
 
+## 1.12.1
+- `ai-search-visibility` uses the new AI visibility tools: `get_ai_brand_visibility` for mentions and share of voice, `ask_ai_models` to sample ChatGPT, Claude, Gemini and Perplexity, and `get_ai_brand_tracking` for the trend. `get_serp_results` now returns the AI Overview text and the pages it cites. Asking the assistants by hand stays as the fallback without a paid plan.
+
 ## 1.12.0
 - `local-seo` scans a grid of points with `run_local_grid` (saved as a heatmap in the project) and re-runs the same grid at check-back; sampling points by hand stays as the fallback.
 - `lead-teardown` can add a grid scan for the leads the user pitches first.
