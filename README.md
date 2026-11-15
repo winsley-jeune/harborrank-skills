@@ -23,7 +23,7 @@ If you ask before connecting, Claude says HarborRank isn't connected, gives thes
 One install adds the HarborRank MCP server and all eighteen skills. Inside Claude Code:
 
 ```
-/plugin marketplace add winsley-jeune/harborrank-skills
+/plugin marketplace add harborrank/harborrank-skills
 /plugin install harborrank@harborrank
 ```
 
@@ -46,7 +46,7 @@ Add [HarborRank from ChatGPT's plugin directory](https://chatgpt.com/plugins/plu
 ## Install as a Gemini CLI extension
 
 ```
-gemini extensions install https://github.com/winsley-jeune/harborrank-skills
+gemini extensions install https://github.com/harborrank/harborrank-skills
 ```
 
 Then run `/mcp auth harborrank` in Gemini CLI to sign in. The extension adds the MCP server and the eighteen skills.
@@ -101,13 +101,13 @@ If a call answers that the account needs a plan or more credits, the text of the
 For Codex or any agent that reads `SKILL.md` files, or if you already added the MCP server by hand:
 
 ```bash
-npx skills add winsley-jeune/harborrank-skills
+npx skills add harborrank/harborrank-skills
 ```
 
 Install everything for Claude Code only:
 
 ```bash
-npx skills add winsley-jeune/harborrank-skills --skill '*' --agent claude-code
+npx skills add harborrank/harborrank-skills --skill '*' --agent claude-code
 ```
 
 Or copy the folders under `skills/` into `~/.claude/skills/` (Claude Code) or `~/.codex/skills/` (Codex).
